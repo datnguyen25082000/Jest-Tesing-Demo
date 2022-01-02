@@ -1,5 +1,10 @@
-describe("suite 4", function () {
-  test("test 4.1", () => {
-    expect(2 + 3).toBe(5);
-  });
+import React from "react";
+import renderer from "react-test-renderer";
+import Link from "../react/Link";
+
+it("renders correctly", () => {
+  const tree = renderer
+    .create(<Link href="http://www.facebook.com" label="Facebook"></Link>)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
 });
