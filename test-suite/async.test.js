@@ -10,7 +10,7 @@ describe("async test", () => {
       console.log("callback function is called");
 
       try {
-        expect(data).toBe("Phat trien web nang cao FAIL");
+        expect(data).toBe("Phat trien web nang cao");
         done();
       } catch (err) {
         done(err);
@@ -23,7 +23,7 @@ describe("async test", () => {
 
   test("promise test", () => {
     return getMockPromise().then((data) => {
-      expect(data).toBe("hello world FAIL");
+      expect(data).toBe("hello world");
     });
   });
 
@@ -31,13 +31,13 @@ describe("async test", () => {
     return getMockPromiseRejected().then(
       () => {},
       (err) => {
-        expect(err).toBe("hihihi");
+        expect(err).toBe("hi");
       }
     );
   });
 
   test("async await test", async () => {
     const result = await getMockPromise()
-    expect(result).toBe("hello world FAIL")
+    expect(result).toBe("hello world")
   });
 });
